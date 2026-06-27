@@ -125,6 +125,20 @@ namespace RasHack.GapOverlap.Main
             waitingTime = settings.PauseBeforeTasks;
         }
 
+        public void ReportTaskFinished(Task.Task task)
+        {
+            if (task != currentTask)
+            {
+                Debug.LogError($"{task} reported as finished, but that ${currentTask} is currently active");
+                return;
+            }
+
+            Debug.Log($"{currentTask} has finished");
+            sampler.CompleteTask(currentTask);
+            currentTask = null;
+            waitingTime = tasks.HasNext ? settings.PauseBetweenTasks : settings.PauseAfterTasks;
+        }
+
         #endregion
 
         #region Mono methods

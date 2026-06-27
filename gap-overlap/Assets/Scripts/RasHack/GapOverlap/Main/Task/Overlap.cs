@@ -68,6 +68,7 @@ namespace RasHack.GapOverlap.Main.Task
             Destroy(peripheralStimulus.gameObject);
             Destroy(centralStimulus.gameObject);
             peripheralStimulus = null;
+            owner.ReportTaskFinished(this);
             Destroy(gameObject);
         }
 
