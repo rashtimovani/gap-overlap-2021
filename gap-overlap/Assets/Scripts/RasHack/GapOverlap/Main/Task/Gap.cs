@@ -105,12 +105,14 @@ namespace RasHack.GapOverlap.Main.Task
         {
             centralStimulus = NewCentralStimulus();
             centralStimulus.StartSimulating(this, Times.CentralTime);
+            Debug.Log($"{centralStimulus} has started");
         }
 
         private void StartWithStimulus()
         {
             peripheralStimulus = NewPeripheralStimulus();
             peripheralStimulus.StartSimulating(stimulusType, Side, this, Times.StimulusTime);
+            Debug.Log($"{peripheralStimulus} has started");
         }
 
         #endregion

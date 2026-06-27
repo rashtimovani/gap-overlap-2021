@@ -108,6 +108,7 @@ namespace RasHack.GapOverlap.Main.Task
             centralStimulus.StartSimulating(this, Times.CentralTime + Times.CentralOutStimulusIn,
                 Times.CentralOutStimulusIn);
             centralTimeOnly = Times.CentralTime;
+            Debug.Log($"{centralStimulus} has started");
         }
 
         private void StartWithStimulus()
@@ -115,6 +116,7 @@ namespace RasHack.GapOverlap.Main.Task
             peripheralStimulus = NewPeripheralStimulus();
             peripheralStimulus.StartSimulating(stimulusType, Side, this, Times.StimulusTime + Times.CentralOutStimulusIn,
                 Times.CentralOutStimulusIn);
+            Debug.Log($"{peripheralStimulus} has started");
         }
 
         #endregion
